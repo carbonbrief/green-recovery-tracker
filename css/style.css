@@ -227,6 +227,26 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/sp-flag.gif');
 }
 
+.no {
+    background-image: url('https://www.worldometers.info/img/flags/no-flag.gif');
+}
+
+.no {
+    background-image: url('https://www.worldometers.info/img/flags/no-flag.gif');
+}
+
+.sw {
+    background-image: url('https://www.worldometers.info/img/flags/sw-flag.gif');
+}
+
+.ci {
+    background-image: url('https://www.worldometers.info/img/flags/ci-flag.gif');
+}
+
+.co {
+    background-image: url('https://www.worldometers.info/img/flags/co-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
