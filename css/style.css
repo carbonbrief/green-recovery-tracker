@@ -247,6 +247,10 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/co-flag.gif');
 }
 
+.ca {
+    background-image: url('https://www.worldometers.info/img/flags/ca-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
