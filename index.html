@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/addons/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Sans+Narrow&family=PT+Serif&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script>
     
@@ -124,6 +125,40 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
     $('td', row).eq(0).addClass('ch flag');
     } else if (data[0] == 'India' ) {
     $('td', row).eq(0).addClass('in flag');
+    } else if (data[0] == 'Denmark' ) {
+    $('td', row).eq(0).addClass('da flag');
+    } else if (data[0] == 'UK' ) {
+    $('td', row).eq(0).addClass('uk flag');  
+    } else if (data[0] == 'France' ) {
+    $('td', row).eq(0).addClass('fr flag');  
+    } else if (data[0] == 'Finland' ) {
+    $('td', row).eq(0).addClass('fi flag');
+    } else if (data[0] == 'Italy' ) {
+    $('td', row).eq(0).addClass('it flag');
+    } else if (data[0] == 'Nigeria' ) {
+    $('td', row).eq(0).addClass('ni flag');
+    } else if (data[0] == 'Algeria' ) {
+    $('td', row).eq(0).addClass('ag flag');
+    } else if (data[0] == 'New Zealand' ) {
+    $('td', row).eq(0).addClass('nz flag');  
+    } else if (data[0] == 'Ireland' ) {
+    $('td', row).eq(0).addClass('ei flag');   
+    } else if (data[0] == 'Spain' ) {
+    $('td', row).eq(0).addClass('sp flag');   
+    } else if (data[0] == 'Norway' ) {
+    $('td', row).eq(0).addClass('no flag');   
+    } else if (data[0] == 'Sweden' ) {
+    $('td', row).eq(0).addClass('sw flag');   
+    } else if (data[0] == 'Chile' ) {
+    $('td', row).eq(0).addClass('ci flag');   
+    } else if (data[0] == 'Colombia' ) {
+    $('td', row).eq(0).addClass('co flag');  
+    } else if (data[0] == 'Canada' ) {
+    $('td', row).eq(0).addClass('ca flag');  
+    } else if (data[0] == 'USA' ) {
+    $('td', row).eq(0).addClass('us flag');  
+    } else if (data[0] == 'Poland' ) {
+    $('td', row).eq(0).addClass('pl flag');  
     }
   },
 // Add tooltip
@@ -134,6 +169,9 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
 
   columnDefs: [
       { bSortable: false, targets: [3, 9, 10, 11] },
+    
+// Numeric sorting for strings using Natural plugin
+      { type: 'natural', targets: [6, 7] },
 
 // Check screenwidth, and length of data in the 3rd column. Return clipped string with ellipsis if screenwidth under certain width
 
