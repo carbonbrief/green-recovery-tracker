@@ -62,24 +62,41 @@
 </div>
 
 <script>
-$.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3IIJaLPN-xVCKcMXx1mI/1/public/full?alt=json", function (data) {
+$.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1-BMFGtUMNJbqYVPkNSZEqpR3IIJaLPN-xVCKcMXx1mI/values/GreenRecoveryGrid?alt=json&key=AIzaSyB0QfnIL-dXwkL6PI05tn0LaiLPD1MqZG0", function (data) {
+      // console.log(data);
+      var sheetData = data.values;
+      console.log(sheetData);
 
-      
-      var sheetData = data.feed.entry;
   
       var i;
       for (i = 0; i < sheetData.length; i++) {
-        var country = data.feed.entry[i]['gsx$country']['$t'];
-        var sector = data.feed.entry[i]['gsx$sector']['$t'];
-        var subsector = data.feed.entry[i]['gsx$subsector']['$t'];
-        const description = data.feed.entry[i]['gsx$description']['$t'].replace( /"/g, '&quot;' );
-        var date = data.feed.entry[i]['gsx$date']['$t'];
-        var status = data.feed.entry[i]['gsx$status']['$t'];
-        var amountUSD = data.feed.entry[i]['gsx$amountusd']['$t'];
-        var amountLocal = data.feed.entry[i]['gsx$amountlocal']['$t'];
-        var type = data.feed.entry[i]['gsx$type']['$t'];
-        var source1 = data.feed.entry[i]['gsx$sourcedocument']['$t'];
-        var source2 = data.feed.entry[i]['gsx$furthercoverage']['$t'];
+        // var country = data.values[i]['Country'];
+        // console.log(country)
+        // var sector = data.values[i]['gsx$sector']['$t'];
+        // var subsector = data.values[i]['gsx$subsector']['$t'];
+        // const description = data.values[i]['gsx$description']['$t'].replace( /"/g, '&quot;' );
+        // var date = data.values[i]['gsx$date']['$t'];
+        // var status = data.values[i]['gsx$status']['$t'];
+        // var amountUSD = data.values[i]['gsx$amountusd']['$t'];
+        // var amountLocal = data.values[i]['gsx$amountlocal']['$t'];
+        // var type = data.values[i]['gsx$type']['$t'];
+        // var source1 = data.values[i]['gsx$sourcedocument']['$t'];
+        // var source2 = data.values[i]['gsx$furthercoverage']['$t'];
+        // let clip1 = source1.split("https://").pop().split("/")[0];
+        // let clip2 = source2.split("https://").pop().split("/")[0];
+        // let mobclip = "1";
+        // let mobclip2 = "2";
+        var country = sheetData[i][0];
+        var sector = sheetData[i][1];
+        var subsector = sheetData[i][2];
+        const description = sheetData[i][3].replace( /"/g, '&quot;' );
+        var date = sheetData[i][4];
+        var status = sheetData[i][5];
+        var amountUSD = sheetData[i][6];
+        var amountLocal = sheetData[i][7];
+        var type = sheetData[i][8];
+        var source1 = sheetData[i][9];
+        var source2 = sheetData[i][10];
         let clip1 = source1.split("https://").pop().split("/")[0];
         let clip2 = source2.split("https://").pop().split("/")[0];
         let mobclip = "1";
